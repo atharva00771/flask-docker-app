@@ -1,0 +1,16 @@
+from flask import Flask
+
+# Initialize the Flask application
+app = Flask(__name__)
+
+
+# Define the home route
+@app.route("/")
+def home():
+    """Return a welcome message for the application."""
+    return "Hello! Flask application is running successfully inside Docker."
+
+
+# Start the Flask development server
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=80)
