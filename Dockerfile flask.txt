@@ -1,0 +1,17 @@
+# Use the official Python 3.12 image as the base image
+FROM python:3.12
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy all project files into the container
+COPY . .
+
+# Install Flask framework required by the application
+RUN pip install flask
+
+# Expose port 80 for the Flask application
+EXPOSE 80
+
+# Start the Flask application when the container runs
+CMD ["python", "app.py"]
